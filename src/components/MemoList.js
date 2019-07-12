@@ -7,27 +7,27 @@ class MemoList extends React.Component{
             <View style={styles.memoList}> 
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>メモ5</Text>
-                    <Text style={styles.memoDate}>2019/7</Text>
+                    <Text style={styles.memoDate}>2019/07</Text>
                 </View>
     
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>メモ4</Text>
-                    <Text style={styles.memoDate}>2019/7</Text>
+                    <Text style={styles.memoDate}>2019/07</Text>
                 </View>
     
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>メモ3</Text>
-                    <Text style={styles.memoDate}>2019/7</Text>
+                    <Text style={styles.memoDate}>2019/07</Text>
                 </View>
     
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>メモ2</Text>
-                    <Text style={styles.memoDate}>2019/7</Text>
+                    <Text style={styles.memoDate}>2019/07</Text>
                 </View>
     
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>メモ１</Text>
-                    <Text style={styles.memoDate}>2019/7</Text>
+                    <Text style={styles.memoDate}>2019/07</Text>
                 </View>
             </View>
         );
