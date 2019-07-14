@@ -1,14 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight} from 'react-native';
 
 class MemoList extends React.Component{
     render(){
         return(
             <View style={styles.memoList}> 
-                <View style={styles.memoListItem}>
-                    <Text style={styles.memoTitle}>メモ5</Text>
-                    <Text style={styles.memoDate}>2019/07</Text>
-                </View>
+                <TouchableHighlight onPress={ () => {this.props.navigation.navigate('MemoDetail');} }>
+                    <View style={styles.memoListItem}>
+                        <Text style={styles.memoTitle}>メモ5</Text>
+                        <Text style={styles.memoDate}>2019/07</Text>
+                    </View>
+                </TouchableHighlight>
     
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>メモ4</Text>
@@ -43,6 +45,7 @@ const styles = StyleSheet.create({
         padding: 18,
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
+        backgroundColor: '#fff',
     },
     memoTitle:{
         fontSize: 20,
