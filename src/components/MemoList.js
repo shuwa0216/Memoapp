@@ -1,36 +1,22 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableHighlight} from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight, FlatList} from 'react-native';
 
 class MemoList extends React.Component{
+    renderMemo({ item }){
+        return(
+            <TouchableHighlight onPress={ () => {this.props.navigation.navigate('MemoDetail');} }>
+                <View style={styles.memoListItem}>
+                    <Text style={styles.memoTitle}>{item.body}</Text>
+                    <Text style={styles.memoDate}>2019/07</Text>
+                </View>
+            </TouchableHighlight>
+        );
+    }
+
     render(){
         return(
             <View style={styles.memoList}> 
-                <TouchableHighlight onPress={ () => {this.props.navigation.navigate('MemoDetail');} }>
-                    <View style={styles.memoListItem}>
-                        <Text style={styles.memoTitle}>メモ5</Text>
-                        <Text style={styles.memoDate}>2019/07</Text>
-                    </View>
-                </TouchableHighlight>
-    
-                <View style={styles.memoListItem}>
-                    <Text style={styles.memoTitle}>メモ4</Text>
-                    <Text style={styles.memoDate}>2019/07</Text>
-                </View>
-    
-                <View style={styles.memoListItem}>
-                    <Text style={styles.memoTitle}>メモ3</Text>
-                    <Text style={styles.memoDate}>2019/07</Text>
-                </View>
-    
-                <View style={styles.memoListItem}>
-                    <Text style={styles.memoTitle}>メモ2</Text>
-                    <Text style={styles.memoDate}>2019/07</Text>
-                </View>
-    
-                <View style={styles.memoListItem}>
-                    <Text style={styles.memoTitle}>メモ１</Text>
-                    <Text style={styles.memoDate}>2019/07</Text>
-                </View>
+                <FlatList data={this.props.memoList} renderItem={this.renderMemo.bind(this)}/>
             </View>
         );
     }
