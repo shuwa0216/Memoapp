@@ -14,6 +14,15 @@ class MemoListScreen extends React.Component{
         const { currentUser } = firebase.auth();
         firebase.firestore().collection(`users/${currentUser.uid}/memos`)
 
+        .onSnapshot((snapshot) => {
+            const memoList = [];
+            snapshot.forEach((doc) => {
+                memoList.push({ ...doc.data(), key:doc.id });
+            });
+            this.setState({ memoList: memoList });
+        });
+
+        /*
         .get()
         .then((querySnapshot) => {
             const memoList = [];
@@ -25,6 +34,7 @@ class MemoListScreen extends React.Component{
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
+        */
     }
 
     handlePress(){
