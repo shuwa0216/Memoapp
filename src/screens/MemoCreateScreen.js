@@ -12,7 +12,6 @@ class MemoCreateScreen extends React.Component{
     handlePress(){
         const db = firebase.firestore()
         const { currentUser } = firebase.auth();
-        console.log(currentUser);
 
         db.collection(`users/${currentUser.uid}/memos`).add({
             body: this.state.body,
@@ -22,8 +21,7 @@ class MemoCreateScreen extends React.Component{
         .then(() => {
             this.props.navigation.goBack();
         })
-        .catch((error) => {
-            console.error(error);
+        .catch(() => {
         });
     }
 

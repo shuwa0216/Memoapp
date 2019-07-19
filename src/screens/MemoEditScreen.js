@@ -12,12 +12,10 @@ class MemoEditScreen extends React.Component{
 
     componentWillMount(){
         const {params} = this.props.navigation.state;
-        console.log('テスト', params.memo),
         this.setState({ body: params.memo.body, key: params.memo.key });
     }
 
     handlePress(){
-        console.log('press');
         const { currentUser } = firebase.auth();
         firebase.firestore().collection(`users/${currentUser.uid}/memos`).doc(this.state.key)
             .update({
@@ -32,7 +30,7 @@ class MemoEditScreen extends React.Component{
                 });
                 this.props.navigation.goBack();
             })
-            .catch((error) => {
+            .catch(() => {
             })
     }
 

@@ -11,7 +11,7 @@ class LoginScreen extends React.Component{
 
     handleSubmit() {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((user) => {
+        .then(() => {
             const resetAction = StackActions.reset({
                 index: 0,
                 actions:[
