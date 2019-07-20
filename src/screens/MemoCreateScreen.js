@@ -32,6 +32,7 @@ class MemoCreateScreen extends React.Component{
                     style={styles.memoEditInput} 
                     multiline value={this.state.body}
                     onChangeText={ (text)=>{ this.setState({ body: text }); } }
+                    textAlignVertical="top"
                 />
 
                 <CircleButton 
