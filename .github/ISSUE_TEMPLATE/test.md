@@ -1,7 +1,7 @@
 ---
 name: test
 about: test
-title: ''
+title: 【】
 labels: ''
 assignees: ''
 
