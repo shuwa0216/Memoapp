@@ -1,6 +1,5 @@
 ---
 name: name
-about: about
 ---
 
 # hoge
