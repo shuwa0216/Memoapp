@@ -1,10 +1,6 @@
 ---
 name: Custom issue template
 about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
 ---
 
 (パートナー名/パートナーID/デジコ管理番号以外の個人情報を載せないように※スクショも含む)
